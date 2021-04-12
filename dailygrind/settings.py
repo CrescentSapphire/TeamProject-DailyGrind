@@ -79,9 +79,16 @@ WSGI_APPLICATION = 'dailygrind.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'sql_server.pyodbc',
+        'HOST': 'hbs-sql-001.hobbsbearstudios.com',
+        'NAME': 'GrindInventtory',
+        'USER': 'carens',
+        'PASSWORD': 'Mokoniji13!',
+        'PORT': '1241',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    },
 }
 
 
