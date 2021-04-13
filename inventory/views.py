@@ -7,5 +7,5 @@ def inventory(request):
     return render(request, 'inventory/inventory.html', {'list': inlist})
 
 def item_detail(request, pk):
-    post = get_object_or_404(InventoryTable, pk=pk)
+    item = get_object_or_404(InventoryTable, pk=pk)
     return render(request, 'blog/post_detail.html', {'item': item})
