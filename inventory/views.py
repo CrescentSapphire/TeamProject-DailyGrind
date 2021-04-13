@@ -1,11 +1,12 @@
 from django.shortcuts import get_object_or_404, render
-from .models import InventoryTable
+from .models import Inventory
+from .tables import InventoryTable
 
 # Create your views here.
 def inventory(request):
-    inlist = InventoryTable.objects.all()
-    return render(request, 'inventory/inventory.html', {'list': inlist})
+    table = InventoryTable(Inventory.objects.all())
+    return render(request, 'inventory/inventory.html', {"table": table})
 
 def item_detail(request, pk):
-    item = get_object_or_404(InventoryTable, pk=pk)
+    item = get_object_or_404(Inventory, pk=pk)
     return render(request, 'blog/post_detail.html', {'item': item})

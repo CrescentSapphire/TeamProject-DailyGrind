@@ -7,7 +7,7 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-class InventoryTable(models.Model):
+class Inventory(models.Model):
     sc_name = models.CharField(primary_key=True, max_length=90)
     sc_daily_demand = models.IntegerField(blank=True, null=True)
     sc_popularity = models.CharField(max_length=20, blank=True, null=True)

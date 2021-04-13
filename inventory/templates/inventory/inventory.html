@@ -1,6 +1,5 @@
 {% extends 'inventory/base.html' %}
+{% load render_table from django_tables2 %}
 {% block content %}
-    {% for i in list %}
-        {{ i }}
-    {% endfor %}
+    {% render_table table %}
 {% endblock %}
