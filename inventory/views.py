@@ -9,4 +9,4 @@ def inventory(request):
 
 def item_detail(request, pk):
     item = get_object_or_404(Inventory, pk=pk)
-    return render(request, 'blog/post_detail.html', {'item': item})
+    return render(request, 'inventory/item_detail.html', {'item': item})
