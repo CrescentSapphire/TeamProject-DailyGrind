@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404, render
+from django.contrib.auth import logout
 from .models import Inventory
 from .tables import InventoryTable
+
 
 # Create your views here.
 def inventory(request):
