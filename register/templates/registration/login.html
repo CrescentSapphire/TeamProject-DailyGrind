@@ -1,0 +1,13 @@
+{%block title%}
+Log In
+{%endblock%}
+
+{%load crispy_forms_tags%}
+{%block content%}
+<form method="POST" class="from-group">
+    {% csrf_token %}
+    </p>Don't have an account? Create one <a href="/register">here</a><p>
+    {{form|crispy}}
+    <button type="submit" class="tn btn-success">Login</button>
+</form>
+{%endblock%}
