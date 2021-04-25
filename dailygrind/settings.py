@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os
+import os, os.path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'django_tables2',
+    'register.apps.RegisterConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,10 +59,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'dailygrind.urls'
 
+REGISTER_PATH = os.path.dirname(os.path.dirname(os.path.dirname("register.html")))
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(REGISTER_PATH, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,3 +136,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+CRISPY_TEMPLATE_PACK='bootstrap4'
+
+LOGIN_REDIRECT_URL = "/inventory"
+LOGOUT_REDIRECT_URL = "/inventory"
