@@ -1,0 +1,19 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+    <h1>{{item_name}}<h1><br>
+
+    <form class="update-item-attributes" method="POST" action="{% url 'update_item_attributes' %}">
+    {% csrf_token %}
+    <input type="hidden" name="test" value="{{item_name}}">
+    <h3>Daily Demand</h3>
+    <input type="text" name="daily-demand">
+    <h3>Popularity</h3>
+    <input type="text" name="popularity">
+    <h3>Days Before Out</h3>
+    <input type="text" name="days-before-out">
+    <br>
+    <button type="submit"> submit </button>
+    </form>
+
+{% endblock %}

@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Tim\Documents\keys\TeamProject-DailyGrind\dailygrind_env"
+VIRTUAL_ENV="C:\Users\Tim\Documents\TeamProject-DailyGrind-main\dailygrind_env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
