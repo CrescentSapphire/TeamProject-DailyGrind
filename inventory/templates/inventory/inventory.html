@@ -3,19 +3,9 @@
 {% load crispy_forms_tags %}
 {% crispy form form.helper%}
 {% load static %}
-<!DOCTYPE html>
 
-<html class="h-100">
-    <head>
-        <meta charset="utf-8">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'inventory/css/bootstrap.min.css' %}">
-    </head>
 
-    <body class="h-100">
-        {% block content %}
-            {% crispy form %}
-            {% render_table table %}
-        {% endblock %}
-    </body>
-</html>
+{% block content %}
+    {% crispy form %}
+    {% render_table table %}
+{% endblock %}
