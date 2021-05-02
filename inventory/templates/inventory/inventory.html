@@ -1,5 +1,7 @@
 {% extends 'inventory/base.html' %}
 {% load render_table from django_tables2 %}
+{% load crispy_forms_tags %}
+{% crispy form form.helper%}
 {% load static %}
 <!DOCTYPE html>
 
@@ -12,6 +14,7 @@
 
     <body class="h-100">
         {% block content %}
+            {% crispy form %}
             {% render_table table %}
         {% endblock %}
     </body>

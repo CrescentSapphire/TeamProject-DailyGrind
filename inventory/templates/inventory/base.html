@@ -10,13 +10,8 @@
     <body>
         <nav class="navbar navbar-light bg-light">
             <h1><a href="/inventory" class="navbar-brand">Daily Grind</a></h1>
-
             {%if user.is_authenticated%}
-                <form class="form-inline" method="POST" action="{% url 'item_detail' %}">
-                    {% csrf_token %}
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search-bar" name="search-bar">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>
-                </form>
+                <a href="{% url 'inventory:item_add'%}">Add Item</a>
                 <a href="{% url 'logout' %}">Log Out</a>
         </nav>
                 {% block content %}
