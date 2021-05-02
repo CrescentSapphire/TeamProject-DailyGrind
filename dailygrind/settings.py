@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'ec2-18-221-240-44.us-east-2.compute.amazonaws.com',
+    'moonbeancoffee.cafe',
 ]
 
 
