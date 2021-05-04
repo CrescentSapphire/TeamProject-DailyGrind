@@ -50,5 +50,6 @@ def item_edit(request, pk):
 
 def item_delete(request, pk):
     record = get_object_or_404(Inventory, pk=pk)
-    Inventory.objects.filter(pk=record.pk).delete()
+    item = Inventory.objects.filter(pk=record.pk)
+    item.delete()
     return render(request, 'inventory/inventory.html')
