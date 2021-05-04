@@ -5,6 +5,7 @@ from .models import Inventory
 class InventoryTable(tables.Table):
     detail = tables.TemplateColumn('<a href="item_detail/{{record.sc_id}}">Detail</a>')
     update = tables.TemplateColumn('<a href="item_edit/{{record.sc_id}}">Edit</a>')
+    delete = tables.TemplateColumn('<a href="item_delete/{{record.sc_id}}">Delete</a>')
     class Meta:
         model = Inventory
         template_name = "django_tables2/bootstrap-responsive.html"
