@@ -13,7 +13,7 @@ class searchForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(searchForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.form_id = 'id-finding-edit-form'
+        self.helper.form_id = 'id-finding-search-form'
         self.helper.form_method = "POST"
         
         self.helper.layout = Layout(
@@ -30,7 +30,7 @@ class addForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(addForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.form_id = 'id-finding-edit-form'
+        self.helper.form_id = 'id-finding-add-form'
         self.helper.form_method = "POST"
         
         self.helper.layout = Layout(
