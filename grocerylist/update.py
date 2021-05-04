@@ -5,3 +5,4 @@ from grocerylist import grocerylistAPI
 def start():
     scheduler = BackgroundScheduler()
     scheduler.add_job(grocerylistAPI, 'interval', minutes=1440)
+    scheduler.start()

@@ -6,7 +6,7 @@ def _get_grocery_list():
     inventory =  Inventory.objects.all()
     for i in inventory:
         if i.sc_days_before_out <= 5:
-            grocery_list.append(i)
+            grocery_list.append(i.name)
     return grocery_list
     
 def update_grocerylist():
