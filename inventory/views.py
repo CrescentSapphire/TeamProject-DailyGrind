@@ -32,7 +32,7 @@ def item_add(request):
         form = addForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('inventory/inventory.html')
+            return HttpResponseRedirect(reverse('inventory:inventory'))
     else:
         form = addForm()
     return render(request, 'inventory/item_add.html', {'form': form})
@@ -52,4 +52,4 @@ def item_delete(request, pk):
     record = get_object_or_404(Inventory, pk=pk)
     item = Inventory.objects.filter(pk=record.pk)
     item.delete()
-    return render(request, 'inventory/inventory.html')
+    return HttpResponseRedirect(reverse('inventory:inventory'))
