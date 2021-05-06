@@ -14,7 +14,7 @@ def inventory(request):
             searched = request.POST['sc_name']
             results = Inventory.objects.filter(sc_name__contains=searched)
     else:
-        results = Inventory.objects.all()
+        results = Inventory.objects.all().order_by('sc_name')
     table = InventoryTable(results)
     form = searchForm()
     data_dict = {
