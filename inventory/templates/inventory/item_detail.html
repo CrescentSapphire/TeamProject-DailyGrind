@@ -1,24 +1,49 @@
 {% extends 'inventory/base.html' %}
 
 {% block content %}
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
-    <h1> {{item.sc_name}}'s Results<h1>
-    <div class='col-4'>
-        <a href="{% url "inventory:inventory" %}" class="btn btn-outline-secondary" role="button">View Inventory</a>
+<div class="p-2">
+    <div class="text-center p-4">
+        <h3> {{item.sc_name}}'s Results</h3>
     </div>
-    <div class='container'>
-        <div class="row">
-            {{ item.sc_name }}
-        </div>
-        <div class="row">
-            {{ item.sc_daily_demand }}
-        </div>
-        <div class="row">
-            {{ item.sc_popularity}}
-        </div>
-        <div class="row">
-            {{ item.sc_days_before_out }}
-        </div>
+
+    <div class="align-content-center border border-secondary p-4">    
+        <form>
+            <div class="form-row ">
+                <div class="col-10">
+                    <label for="itemName" class="col-sm-2 col-form-label form-control-lg">Short Name</label>
+                </div>
+                <div class="col">
+                    <input type="text" readonly class="form-control-plaintext form-control-lg" id="itemName" value={{item.sc_name}}>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-10">
+                    <label for="dailyDemand" class="col-sm-2 col-form-label form-control-lg">Daily Demand</label>
+                </div>
+                <div class="col">
+                    <input type="text" readonly class="form-control-plaintext form-control-lg" id="dailyDemand" value={{item.sc_daily_demand}}>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-10">
+                    <label for="popularity" class="col-sm-2 col-form-label form-control-lg">Popularity</label>
+                </div>
+                <div class="col">
+                    <input type="text" readonly class="form-control-plaintext form-control-lg" id="popularity" value={{item.sc_popularity}}>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-10">
+                    <label for="leadDay" class="col-sm-2 col-form-label form-control-lg">Lead Day</label>
+                </div>
+                <div class="col">
+                    <input type="text" readonly class="form-control-plaintext form-control-lg" id="popularity" value={{item.sc_days_before_out}}>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 {% endblock %}
